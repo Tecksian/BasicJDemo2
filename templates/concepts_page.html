@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+
+  <h2>{{concepts_page.title}}</h2>
+  <dl>
+    {% for concept in concepts_page.concepts %}
+        <dt>{{ concept.name }}</dt>
+        <dd>{{concept.description}}</dd>
+    {% endfor %}
+  </dl>
+
+    <h2>Comments</h2>
+      {% for comment in concepts_page.comments %}
+        <ol></ol>
+        <li>{{ comment }}</li>
+      {% endfor %}
+
+    <form method="post">
+      <div><textarea name="new_comment" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Add Comment"></div>
+    </form>
+  </body>
+</html>
